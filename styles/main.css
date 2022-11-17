@@ -10,7 +10,7 @@
   --magenta: #A34871; 
 
   /* Font Sizes */
-  --ltitle: 4.2rem;
+  --ltitle: 4.6rem;
   --title: 2rem;
   --subtitle: 1.8rem;
   --p:1.6rem;
@@ -57,7 +57,7 @@ h2 {
   /* height: 100vh; */
   display: grid;
   grid-template-columns: 1fr repeat(10, minmax(0, 6rem)) 1fr;
-  grid-template-rows: 6rem repeat(22, 5rem) 12rem;
+  grid-template-rows: 6rem repeat(24, 5rem) 30rem;
   gap: 20px;
   position: relative;
 }
@@ -162,23 +162,25 @@ h2 {
   z-index: 1;
 }
 .card-info2__title {
-  grid-column: -2 / 6;
-  grid-row: 14 / auto;
+  grid-column: -2 / 7;
+  grid-row: 17 / auto;
   width: auto;
   padding: 18px;
-  text-align: end;
+  text-align: middle;
   color: var(--black-chocolate);
-  z-index: 1;
+  z-index: 2;
+  letter-spacing: 2px;
 }
 .card-info3__title {
-  grid-column: 2 / 6;
-  grid-row: 19;
+  grid-column: 2 / 7;
+  grid-row: 22;
   width: auto;
   background-color: var(--orange);
   padding: 20px;
   text-align: top;
   border-top: 8px solid var(--black-chocolate);
   color: var(--black-chocolate);
+  z-index: 2;
 }
 .card-info1, .card-info2, .card-info3 {
   min-width: 20rem;
@@ -194,12 +196,20 @@ h2 {
   z-index: 1;
 }
 .card-info2 {
-  grid-column: 8 / 12;
-  grid-row: 16 / 19;
+  grid-column: 6 / 11;
+  grid-row: 15 / 19;
+  z-index: 2;
+  text-align: right;
+  padding-left: 100px;
 }
 .card-info3 {
-  grid-column: 2 / 6;
-  grid-row: 21 / 24;
+  display: flex;
+  align-items: flex-end;
+  grid-column: 2 / 7;
+  grid-row: 23 / 26;
+  text-align: end;
+  text-align: left;
+  z-index: 0;
 }
 
 .img-1h, .img-3h {
@@ -209,11 +219,11 @@ h2 {
   object-fit: cover;
 }
 .img-2h {
-  max-height: 40rem;
+  max-height: 50rem;
   box-shadow: 15px 20px 0 0 var(--orange);
   object-fit: cover;
-  grid-column: 2 / 6;
-  grid-row: 13 / 19;
+  grid-column: 2 / 7;
+  grid-row: 13 / 20;
 }
 .img-1h {
   grid-column: 6 / 13;
@@ -223,4 +233,43 @@ h2 {
 .img-3h {
   grid-column: 6 / 12;
   grid-row: 20 / 24;
+  z-index: 1;
+}
+.map__container {
+  width: 100%;
+  grid-column: 1 / 13;
+  grid-row: 26 / 27;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../assets/cabos-cover.jpeg);
+  background-attachment: fixed;
+}
+
+@media only screen and (max-device-width: 700px) {
+  .map__container {
+    background-attachment: scroll;
+  }
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  height: 100px;
+  padding: 16px 20px 16px;
+  background-color: var(--orange);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left {
+  display: flex;
+  gap: 12px;
+  font-size: var(--xs);
+}
+.footer-right {
+  display: flex;
+  gap: 24px;
 }
